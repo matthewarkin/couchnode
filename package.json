@@ -3,7 +3,7 @@
     "url": "http://www.couchbase.com/issues/browse/JSCBC",
     "email": "support@couchbase.com"
   },
-  "description": "The official Couchbase Node.js Client Library.",
+  "description": "Markin Fork of Couchbase Node.js Client Library.",
   "engines": {
     "node": ">=0.8.8"
   },
@@ -35,9 +35,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/couchbase/couchnode.git"
+    "url": "http://github.com/matthewarkin/couchnode.git"
   },
-  "version": "2.0.9",
+  "version": "2.0.10",
   "config": {
     "native": false
   },

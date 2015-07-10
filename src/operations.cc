@@ -38,7 +38,11 @@ static const int PS_QUERY = 6;
 template <int X, size_t Y, typename T, typename V>
 bool _ParseString(const T** val, V* nval, Handle<Value> key) {
     static char keyBuffer[Y];
-    *val = (char*)_NanRawString(key, Nan::UTF8, (size_t*)nval,
+    v8::Local<v8::String> keyStr = key->ToString();
+    if (keyStr->Utf8Length() >= Y) {
+        return false;
+    }
+    *val = (char*)_NanRawString(keyStr, Nan::UTF8, (size_t*)nval,
             keyBuffer, Y, v8::String::NO_OPTIONS);
     return true;
 }
